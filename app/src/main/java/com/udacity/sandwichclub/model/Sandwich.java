@@ -3,6 +3,7 @@ package com.udacity.sandwichclub.model;
 import android.databinding.BindingAdapter;
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -38,6 +39,19 @@ public class Sandwich {
                 .load(imageUrl)
                 .error(error)
                 .into(view);
+    }
+
+    @BindingAdapter({"text"})
+    public static void loadTextFromCollection(TextView view, List<String> collection) {
+        if (collection.isEmpty()) {
+            view.setText("");
+        } else {
+            int listSize = collection.size();
+            for (int i = 0; i < listSize - 1; i++) {
+                view.append(String.format("%s, ", collection.get(i)));
+            }
+            view.append(String.format("%s", collection.get(listSize - 1)));
+        }
     }
 
     public String getMainName() {

@@ -8,7 +8,6 @@
         <variable
             name="sandwich"
             type="com.udacity.sandwichclub.model.Sandwich" />
-        <!--TODO: Check databinding capabilities for arrays/lists-->
     </data>
 
     <ScrollView
@@ -65,12 +64,14 @@
             <TextView
                 android:id="@+id/ingredients_tv"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:text="@{sandwich.ingredients}"/>
 
             <TextView
                 android:id="@+id/also_known_tv"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:text="@{sandwich.alsoKnownAs}" />
 
             <TextView
                 android:layout_width="wrap_content"
