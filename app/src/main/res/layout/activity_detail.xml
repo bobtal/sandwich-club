@@ -29,6 +29,7 @@
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/sandwich_picture_content_description"
                 app:image="@{sandwich.image}"
+                app:error="@{@drawable/no_image}"
                 android:scaleType="centerCrop" />
 
             <TextView
