@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
         <variable
             name="sandwich"
             type="com.udacity.sandwichclub.model.Sandwich" />
-        <!--TODO: Check databinding capabilities for arrays/lists and immages-->
+        <!--TODO: Check databinding capabilities for arrays/lists-->
     </data>
 
     <ScrollView
@@ -27,6 +28,7 @@
                 android:layout_height="200dp"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/sandwich_picture_content_description"
+                app:image="@{sandwich.image}"
                 android:scaleType="centerCrop" />
 
             <TextView

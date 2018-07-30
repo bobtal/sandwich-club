@@ -1,5 +1,10 @@
 package com.udacity.sandwichclub.model;
 
+import android.databinding.BindingAdapter;
+import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class Sandwich {
@@ -24,6 +29,14 @@ public class Sandwich {
         this.description = description;
         this.image = image;
         this.ingredients = ingredients;
+    }
+
+    // TODO: Deal with dead image urls
+    @BindingAdapter({"bind:image"})
+    public static void loadImage(ImageView view, String imageUrl) {
+        Picasso.with(view.getContext())
+                .load(imageUrl)
+                .into(view);
     }
 
     public String getMainName() {

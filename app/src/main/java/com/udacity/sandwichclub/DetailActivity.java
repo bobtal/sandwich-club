@@ -49,9 +49,6 @@ public class DetailActivity extends AppCompatActivity {
 
         binding.setSandwich(sandwich);
         populateUI();
-        Picasso.with(this)
-                .load(sandwich.getImage())
-                .into(ingredientsIv);
 
         setTitle(sandwich.getMainName());
     }
