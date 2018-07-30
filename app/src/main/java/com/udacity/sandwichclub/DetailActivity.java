@@ -22,7 +22,6 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActivityDetailBinding binding =
                 DataBindingUtil.setContentView(DetailActivity.this, R.layout.activity_detail);
-//        setContentView(R.layout.activity_detail);
 
         ImageView ingredientsIv = findViewById(R.id.image_iv);
 
