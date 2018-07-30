@@ -12,7 +12,7 @@ public class Sandwich {
     private List<String> ingredients = null;
 
     /**
-     * No args constructor for use in serialization
+     * No args constructor for use in serialization (and data binding)
      */
     public Sandwich() {
     }
