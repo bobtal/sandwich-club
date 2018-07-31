@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+import com.udacity.sandwichclub.R;
 
 import java.util.List;
 
@@ -44,7 +45,7 @@ public class Sandwich {
     @BindingAdapter({"text"})
     public static void loadTextFromCollection(TextView view, List<String> collection) {
         if (collection.isEmpty()) {
-            view.setText("");
+            view.setText(R.string.not_available);
         } else {
             int listSize = collection.size();
             for (int i = 0; i < listSize - 1; i++) {

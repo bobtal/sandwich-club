@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -14,7 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!--TODO: Sort out the layout to a sensible one-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,57 +26,78 @@
                 android:layout_height="200dp"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/sandwich_picture_content_description"
-                app:image="@{sandwich.image}"
+                android:scaleType="centerCrop"
                 app:error="@{@drawable/no_image}"
-                android:scaleType="centerCrop" />
+                app:image="@{sandwich.image}" />
 
-            <TextView
-                android:id="@+id/origin_tv"
-                android:text="@{sandwich.placeOfOrigin}"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/detail_also_known_as_label"
-                android:textStyle="bold" />
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/activity_horizontal_margin">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <TextView
+                    style="@style/HeadingTextStyle"
+                    android:text="@string/detail_also_known_as_label" />
+
+                <TextView
+                    android:id="@+id/also_known_tv"
+                    style="@style/DetailsTextStyle"
+                    app:text="@{sandwich.alsoKnownAs}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/detail_ingredients_label"
-                android:textStyle="bold" />
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/activity_horizontal_margin">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <TextView
+                    style="@style/HeadingTextStyle"
+                    android:text="@string/detail_place_of_origin_label" />
+
+                <TextView
+                    android:id="@+id/origin_tv"
+                    style="@style/DetailsTextStyle"
+                    android:text="@{sandwich.placeOfOrigin}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/detail_place_of_origin_label"
-                android:textStyle="bold" />
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/activity_horizontal_margin">
 
-            <TextView
-                android:id="@+id/description_tv"
-                android:text="@{sandwich.description}"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                <TextView
+                    style="@style/HeadingTextStyle"
+                    android:text="@string/detail_description_label" />
 
-            <TextView
-                android:id="@+id/ingredients_tv"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/description_tv"
+                    style="@style/DetailsTextStyle"
+                    android:text="@{sandwich.description}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:text="@{sandwich.ingredients}"/>
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/activity_horizontal_margin">
 
-            <TextView
-                android:id="@+id/also_known_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:text="@{sandwich.alsoKnownAs}" />
+                <TextView
+                    style="@style/HeadingTextStyle"
+                    android:text="@string/detail_ingredients_label" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/detail_description_label"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/ingredients_tv"
+                    style="@style/DetailsTextStyle"
+                    app:text="@{sandwich.ingredients}" />
+
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 </layout>
