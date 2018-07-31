@@ -47,7 +47,6 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         binding.setSandwich(sandwich);
-        populateUI();
 
         setTitle(sandwich.getMainName());
     }
@@ -57,7 +56,4 @@ public class DetailActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_SHORT).show();
     }
 
-    private void populateUI() {
-
-    }
 }
