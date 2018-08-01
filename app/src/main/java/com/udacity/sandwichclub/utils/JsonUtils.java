@@ -23,11 +23,11 @@ public class JsonUtils {
         try {
             JSONObject jsonSandwich = new JSONObject(json);
             JSONObject jsonName = jsonSandwich.getJSONObject(JSON_NAME);
-            String mainName = jsonName.getString(JSON_MAIN_NAME);
+            String mainName = jsonName.optString(JSON_MAIN_NAME);
             List<String> alsoKnownAs = jsonToStringList(jsonName.getJSONArray(JSON_AKA));
-            String placeOfOrigin = jsonSandwich.getString(JSON_PLACE_OF_ORIGIN);
-            String description = jsonSandwich.getString(JSON_DESCRIPTION);
-            String image = jsonSandwich.getString(JSON_IMAGE);
+            String placeOfOrigin = jsonSandwich.optString(JSON_PLACE_OF_ORIGIN);
+            String description = jsonSandwich.optString(JSON_DESCRIPTION);
+            String image = jsonSandwich.optString(JSON_IMAGE);
             List<String> ingredients = jsonToStringList(jsonSandwich.getJSONArray(JSON_INGREDIENTS));
             return new Sandwich(
                     mainName,
@@ -48,7 +48,7 @@ public class JsonUtils {
 
         int listSize = jsonArray.length();
         for (int i = 0; i < listSize; i++) {
-            stringList.add(jsonArray.getString(i));
+            stringList.add(jsonArray.optString(i));
         }
 
         return stringList;
